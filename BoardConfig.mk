@@ -36,20 +36,18 @@ TARGET_RECOVERY_FSTAB := device/samsung/i9300/rootdir/fstab.smdk4x12
 RECOVERY_FSTAB_VERSION := 2
 
 # Selinux
-#BOARD_SEPOLICY_DIRS += \
-#    device/samsung/i9300/selinux
-#
-#BOARD_SEPOLICY_UNION += \
-#    device.te \
-#    domain.te \
-#    file.te \
-#    file_contexts \
-#    init.te \
-#    mediaserver.te \
-#    rild.te \
-#    system.te \
-#    ueventd.te \
-#    wpa_supplicant.te
+BOARD_SEPOLICY_DIRS += \
+    device/samsung/i9300/selinux
+
+BOARD_SEPOLICY_UNION += \
+    device.te \
+    domain.te \
+    file.te \
+    file_contexts \
+    init.te \
+    mediaserver.te \
+    rild.te \
+    ueventd.te
 
 # assert
 TARGET_OTA_ASSERT_DEVICE := m0,i9300,GT-I9300
@@ -57,6 +55,8 @@ TARGET_OTA_ASSERT_DEVICE := m0,i9300,GT-I9300
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 TARGET_PROVIDES_CAMERA_HAL := true
+
+BOARD_USES_LEGACY_MMAP := true
 
 # inherit from the proprietary version
 -include vendor/samsung/i9300/BoardConfigVendor.mk
