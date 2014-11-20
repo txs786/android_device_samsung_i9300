@@ -417,6 +417,11 @@ typedef uint8_t GpsNavigationMessageType;
  */
 #define GNSS_CONFIGURATION_INTERFACE     "gnss_configuration"
 
+/**
+ * The GPS chipset can use Psc for AGPS.
+ */
+#define AGPS_USE_PSC
+
 
 /** Represents a location. */
 typedef struct {
@@ -504,6 +509,9 @@ typedef struct {
     uint16_t mcc;
     uint16_t mnc;
     uint16_t lac;
+#ifdef AGPS_USE_PSC
+    uint16_t psc;
+#endif
     uint32_t cid;
 } AGpsRefLocationCellID;
 
