@@ -22,7 +22,7 @@
 # RIL
 BOARD_PROVIDES_LIBRIL := true
 BOARD_MODEM_TYPE := xmm6262
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/i9300/include
+BOARD_RIL_CLASS := ../../../hardware/samsung/ril
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/i9300/bluetooth
@@ -56,6 +56,9 @@ RECOVERY_FSTAB_VERSION := 2
 TARGET_OTA_ASSERT_DEVICE := m0,i9300,GT-I9300
 
 BOARD_USES_LEGACY_MMAP := true
+
+# own headers
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/i9300/include
 
 # inherit from the proprietary version
 -include vendor/samsung/i9300/BoardConfigVendor.mk
